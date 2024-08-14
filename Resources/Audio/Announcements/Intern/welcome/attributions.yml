@@ -1,0 +1,29 @@
+- files: ["1.ogg"]
+  license: "CC-BY-SA-3.0"
+  copyright: "Taken from tgstation"
+  source: "https://github.com/tgstation/tgstation/blob/master/sound/ai/intern/welcome/1.ogg"
+
+- files: ["2.ogg"]
+  license: "CC-BY-SA-3.0"
+  copyright: "Taken from tgstation"
+  source: "https://github.com/tgstation/tgstation/blob/master/sound/ai/intern/welcome/2.ogg"
+
+- files: ["3.ogg"]
+  license: "CC-BY-SA-3.0"
+  copyright: "Taken from tgstation"
+  source: "https://github.com/tgstation/tgstation/blob/master/sound/ai/intern/welcome/3.ogg"
+
+- files: ["4.ogg"]
+  license: "CC-BY-SA-3.0"
+  copyright: "Taken from tgstation"
+  source: "https://github.com/tgstation/tgstation/blob/master/sound/ai/intern/welcome/4.ogg"
+
+- files: ["5.ogg"]
+  license: "CC-BY-SA-3.0"
+  copyright: "Taken from tgstation"
+  source: "https://github.com/tgstation/tgstation/blob/master/sound/ai/intern/welcome/5.ogg"
+
+- files: ["6.ogg"]
+  license: "CC-BY-SA-3.0"
+  copyright: "Taken from tgstation"
+  source: "https://github.com/tgstation/tgstation/blob/master/sound/ai/intern/welcome/6.ogg"

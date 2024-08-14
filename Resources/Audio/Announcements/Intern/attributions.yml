@@ -1,0 +1,69 @@
+- files: ["aliens.ogg"]
+  license: "CC-BY-SA-3.0"
+  copyright: "Taken from tgstation"
+  source: "https://github.com/tgstation/tgstation/blob/master/sound/ai/intern/aliens.ogg"
+
+- files: ["announce.ogg"]
+  license: "CC-BY-SA-3.0"
+  copyright: "Taken from tgstation, cut from the beginning"
+  source: "https://github.com/tgstation/tgstation/blob/40d89d11ea4a5cb81d61dc1018b46f4e7d32c62a/sound/ai/default/shuttlerecalled.ogg"
+
+- files: ["attention.ogg"]
+  license: "CC-BY-SA-3.0"
+  copyright: "Taken from tgstation"
+  source: "https://github.com/tgstation/tgstation/blob/40d89d11ea4a5cb81d61dc1018b46f4e7d32c62a/sound/ai/default/attention.ogg"
+
+- files: ["intercept.ogg"]
+  license: "CC-BY-SA-3.0"
+  copyright: "Taken from tgstation"
+  source: "https://github.com/tgstation/tgstation/blob/master/sound/ai/intern/intercept.ogg"
+
+- files: ["ion_storm.ogg"]
+  license: "CC-BY-SA-3.0"
+  copyright: "Taken from tgstation"
+  source: "https://github.com/tgstation/tgstation/blob/master/sound/ai/intern/ionstorm.ogg"
+
+- files: ["meteors.ogg"]
+  license: "CC-BY-SA-3.0"
+  copyright: "Taken from tgstation"
+  source: "https://github.com/tgstation/tgstation/blob/master/sound/ai/intern/meteors.ogg"
+
+- files: ["outbreak7.ogg"]
+  license: "CC-BY-SA-3.0"
+  copyright: "Taken from tgstation"
+  source: "https://github.com/tgstation/tgstation/blob/master/sound/ai/intern/outbreak7.ogg"
+
+- files: ["power_off.ogg"]
+  license: "CC-BY-SA-3.0"
+  copyright: "Taken from tgstation"
+  source: "https://github.com/tgstation/tgstation/blob/master/sound/ai/intern/poweroff.ogg"
+
+- files: ["power_on.ogg"]
+  license: "CC-BY-SA-3.0"
+  copyright: "Taken from tgstation"
+  source: "https://github.com/tgstation/tgstation/blob/master/sound/ai/intern/poweron.ogg"
+
+- files: ["radiation.ogg"]
+  license: "CC-BY-SA-3.0"
+  copyright: "Taken from tgstation"
+  source: "https://github.com/tgstation/tgstation/blob/master/sound/ai/intern/radiation.ogg"
+
+- files: ["shuttle_dock.ogg"]
+  license: "CC-BY-SA-3.0"
+  copyright: "Taken from tgstation"
+  source: "https://github.com/tgstation/tgstation/blob/master/sound/ai/intern/shuttledock.ogg"
+
+- files: ["shuttlecalled.ogg"]
+  license: "CC-BY-SA-3.0"
+  copyright: "Taken from tgstation"
+  source: "https://github.com/tgstation/tgstation/blob/master/sound/ai/intern/shuttlecalled.ogg"
+
+- files: ["shuttlerecalled.ogg"]
+  license: "CC-BY-SA-3.0"
+  copyright: "Taken from tgstation"
+  source: "https://github.com/tgstation/tgstation/blob/master/sound/ai/intern/shuttlerecalled.ogg"
+
+- files: ["war.ogg"]
+  license: "CC-BY-SA-3.0"
+  copyright: "Paradise, volume and pitch changed, merged with redalert.ogg"
+  source: "https://github.com/ParadiseSS13/Paradise/blob/07b26ee6b4a11a0607986d322ee007020569feae/sound/effects/siren.ogg"

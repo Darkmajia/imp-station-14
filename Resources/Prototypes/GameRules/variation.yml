@@ -123,3 +123,9 @@
     blacklist:
       components:
       - ParticleAcceleratorControlBox
+
+- type: entity
+  id: AnnouncerVariationPass
+  parent: BaseVariationPass
+  components:
+  - type: AnnouncerVariationPass
