@@ -30,16 +30,25 @@
   id: CargoTechnicianBackpack
   equipment:
     back: ClothingBackpackCargo
+  effects:
+  - !type:GroupLoadoutEffect
+    proto: EffectSpeciesNonSnail
 
 - type: loadout
   id: CargoTechnicianSatchel
   equipment:
     back: ClothingBackpackSatchelCargo
+  effects:
+  - !type:GroupLoadoutEffect
+    proto: EffectSpeciesNonSnail
 
 - type: loadout
   id: CargoTechnicianDuffel
   equipment:
     back: ClothingBackpackDuffelCargo
+  effects:
+  - !type:GroupLoadoutEffect
+    proto: EffectSpeciesNonSnail
 
 # OuterClothing
 - type: loadout
@@ -52,6 +61,9 @@
   id: CargoWinterBoots
   equipment:
     shoes: ClothingShoesBootsWinterCargo
+  effects:
+  - !type:GroupLoadoutEffect
+    proto: EffectSpeciesNonSnail
 
 # ID
 - type: loadout

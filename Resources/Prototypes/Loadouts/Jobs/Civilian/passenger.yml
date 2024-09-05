@@ -76,16 +76,25 @@
   id: CommonBackpack
   equipment:
     back: ClothingBackpack
+  effects:
+  - !type:GroupLoadoutEffect
+    proto: EffectSpeciesNonSnail
 
 - type: loadout
   id: CommonSatchel
   equipment:
     back: ClothingBackpackSatchel
+  effects:
+  - !type:GroupLoadoutEffect
+    proto: EffectSpeciesNonSnail
 
 - type: loadout
   id: CommonDuffel
   equipment:
     back: ClothingBackpackDuffel
+  effects:
+  - !type:GroupLoadoutEffect
+    proto: EffectSpeciesNonSnail
 
 # Gloves
 - type: loadout
@@ -107,8 +116,14 @@
   id: BlackShoes
   equipment:
     shoes: ClothingShoesColorBlack
+  effects:
+  - !type:GroupLoadoutEffect
+    proto: EffectSpeciesNonSnail
 
 - type: loadout
   id: WinterBoots
   equipment:
     shoes: ClothingShoesBootsWinter
+  effects:
+  - !type:GroupLoadoutEffect
+    proto: EffectSpeciesNonSnail

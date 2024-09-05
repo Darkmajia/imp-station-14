@@ -27,13 +27,6 @@
     species:
     - Vox
 
-- type: loadoutEffectGroup
-  id: EffectSpeciesSnail
-  effects:
-  - !type:SpeciesLoadoutEffect
-    species:
-    - Snail
-
 - type: loadout
   id: EmergencyOxygenSnail
   effects:

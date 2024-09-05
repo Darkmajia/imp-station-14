@@ -13,16 +13,25 @@
   id: SalvageSpecialistBackpack
   equipment:
     back: ClothingBackpackSalvage
+  effects:
+  - !type:GroupLoadoutEffect
+    proto: EffectSpeciesNonSnail
 
 - type: loadout
   id: SalvageSpecialistSatchel
   equipment:
     back: ClothingBackpackSatchelSalvage
+  effects:
+  - !type:GroupLoadoutEffect
+    proto: EffectSpeciesNonSnail
 
 - type: loadout
   id: SalvageSpecialistDuffel
   equipment:
     back: ClothingBackpackDuffelSalvage
+  effects:
+  - !type:GroupLoadoutEffect
+    proto: EffectSpeciesNonSnail
 
 # OuterClothing
 - type: loadout
@@ -35,6 +44,9 @@
   id: SalvageBoots
   equipment:
     shoes: ClothingShoesBootsSalvage
+  effects:
+  - !type:GroupLoadoutEffect
+    proto: EffectSpeciesNonSnail
 
 # Mantle
 - type: loadout

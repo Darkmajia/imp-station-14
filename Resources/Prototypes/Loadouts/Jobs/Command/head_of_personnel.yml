@@ -17,6 +17,8 @@
       !type:RoleTimeRequirement
       role: JobHeadOfPersonnel
       time: 54000 #15 hrs, special reward for HoP mains
+  - !type:GroupLoadoutEffect
+    proto: EffectSpeciesNonSnail
 
 # Jumpsuit
 - type: loadout

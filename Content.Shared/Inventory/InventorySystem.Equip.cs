@@ -511,6 +511,207 @@ public abstract partial class InventorySystem
         return true;
     }
 
+    public bool TryPeek(
+        EntityUid uid,
+        string slot,
+        bool silent = false,
+        bool force = false,
+        bool predicted = false,
+        InventoryComponent? inventory = null,
+        ClothingComponent? clothing = null,
+        bool reparent = true,
+        bool checkDoafter = false)
+    {
+        return TryPeek(uid, uid, slot, silent, force, predicted, inventory, clothing, reparent, checkDoafter);
+    }
+
+    public bool TryPeek(
+        EntityUid actor,
+        EntityUid target,
+        string slot,
+        bool silent = false,
+        bool force = false,
+        bool predicted = false,
+        InventoryComponent? inventory = null,
+        ClothingComponent? clothing = null,
+        bool reparent = true,
+        bool checkDoafter = false)
+    {
+        return TryPeek(actor, target, slot, out _, silent, force, predicted, inventory, clothing, reparent, checkDoafter);
+    }
+
+    public bool TryPeek(
+        EntityUid uid,
+        string slot,
+        [NotNullWhen(true)] out EntityUid? removedItem,
+        bool silent = false,
+        bool force = false,
+        bool predicted = false,
+        InventoryComponent? inventory = null,
+        ClothingComponent? clothing = null,
+        bool reparent = true,
+        bool checkDoafter = false)
+    {
+        return TryPeek(uid, uid, slot, out removedItem, silent, force, predicted, inventory, clothing, reparent, checkDoafter);
+    }
+
+    public bool TryPeek(
+        EntityUid actor,
+        EntityUid target,
+        string slot,
+        [NotNullWhen(true)] out EntityUid? removedItem,
+        bool silent = false,
+        bool force = false,
+        bool predicted = false,
+        InventoryComponent? inventory = null,
+        ClothingComponent? clothing = null,
+        bool reparent = true,
+        bool checkDoafter = false)
+    {
+        removedItem = null;
+
+        if (TerminatingOrDeleted(target))
+            return false;
+
+        if (!Resolve(target, ref inventory, false))
+        {
+            if (!silent && _gameTiming.IsFirstTimePredicted)
+                _popup.PopupCursor(Loc.GetString("inventory-component-can-peek-cannot"));
+            return false;
+        }
+
+        if (!TryGetSlotContainer(target, slot, out var slotContainer, out var slotDefinition, inventory))
+        {
+            if (!silent && _gameTiming.IsFirstTimePredicted)
+                _popup.PopupCursor(Loc.GetString("inventory-component-can-peek-cannot"));
+            return false;
+        }
+
+        removedItem = slotContainer.ContainedEntity;
+
+        if (!removedItem.HasValue || TerminatingOrDeleted(removedItem.Value))
+            return false;
+
+        if (!force && !CanPeek(actor, target, slot, out var reason, slotContainer, slotDefinition, inventory))
+        {
+            if (!silent && _gameTiming.IsFirstTimePredicted)
+                _popup.PopupCursor(Loc.GetString(reason));
+            return false;
+        }
+
+        //we need to do this to make sure we are 100% removing this entity, since we are now dropping dependant slots
+        if (!force && !_containerSystem.CanRemove(removedItem.Value, slotContainer))
+            return false;
+
+        if (checkDoafter &&
+            Resolve(removedItem.Value, ref clothing, false) &&
+            (clothing.Slots & slotDefinition.SlotFlags) != 0 &&
+            clothing.UnequipDelay > TimeSpan.Zero)
+        {
+            var args = new DoAfterArgs(
+                EntityManager,
+                actor,
+                clothing.UnequipDelay,
+                new ClothingUnequipDoAfterEvent(slot),
+                removedItem.Value,
+                target,
+                removedItem.Value)
+            {
+                BreakOnMove = true,
+                NeedHand = true,
+            };
+
+            _doAfter.TryStartDoAfter(args);
+            return false;
+        }
+
+        foreach (var slotDef in inventory.Slots)
+        {
+            if (slotDef != slotDefinition && slotDef.DependsOn == slotDefinition.Name)
+            {
+                //this recursive call might be risky
+                TryPeek(actor, target, slotDef.Name, true, true, predicted, inventory, reparent: reparent);
+            }
+        }
+
+        if (!_containerSystem.Remove(removedItem.Value, slotContainer, force: force, reparent: reparent))
+            return false;
+
+        // TODO: Inventory needs a hot cleanup hoo boy
+        // Check if something else (AKA toggleable) dumped it into a container.
+        if (!_containerSystem.IsEntityInContainer(removedItem.Value))
+            _transform.DropNextTo(removedItem.Value, target);
+
+        if (!silent && Resolve(removedItem.Value, ref clothing, false) && clothing.UnequipSound != null)
+        {
+            _audio.PlayPredicted(clothing.UnequipSound, target, actor);
+        }
+
+        Dirty(target, inventory);
+
+        _movementSpeed.RefreshMovementSpeedModifiers(target);
+
+        return true;
+    }
+
+    public bool CanPeek(EntityUid uid, string slot, [NotNullWhen(false)] out string? reason,
+        ContainerSlot? containerSlot = null, SlotDefinition? slotDefinition = null,
+        InventoryComponent? inventory = null) =>
+        CanPeek(uid, uid, slot, out reason, containerSlot, slotDefinition, inventory);
+
+    public bool CanPeek(EntityUid actor, EntityUid target, string slot, [NotNullWhen(false)] out string? reason, ContainerSlot? containerSlot = null, SlotDefinition? slotDefinition = null, InventoryComponent? inventory = null)
+    {
+        reason = "inventory-component-can-peek-cannot";
+        if (!Resolve(target, ref inventory, false))
+            return false;
+
+        if ((containerSlot == null || slotDefinition == null) && !TryGetSlotContainer(target, slot, out containerSlot, out slotDefinition, inventory))
+            return false;
+
+        if (containerSlot.ContainedEntity is not { } itemUid)
+            return false;
+
+        if (!_containerSystem.CanRemove(itemUid, containerSlot))
+            return false;
+
+        // make sure the user can actually reach the target
+        if (!CanAccess(actor, target, itemUid))
+        {
+            reason = "interaction-system-user-interaction-cannot-reach";
+            return false;
+        }
+
+        var attemptEvent = new IsPeekingAttemptEvent(actor, target, itemUid, slotDefinition);
+        RaiseLocalEvent(target, attemptEvent, true);
+        if (attemptEvent.Cancelled)
+        {
+            reason = attemptEvent.Reason ?? reason;
+            return false;
+        }
+
+        if (actor != target)
+        {
+            //reuse the event. this is gucci, right?
+            attemptEvent.Reason = null;
+            RaiseLocalEvent(actor, attemptEvent, true);
+            if (attemptEvent.Cancelled)
+            {
+                reason = attemptEvent.Reason ?? reason;
+                return false;
+            }
+        }
+
+        var itemAttemptEvent = new BeingPeekedAttemptEvent(actor, target, itemUid, slotDefinition);
+        RaiseLocalEvent(itemUid, itemAttemptEvent, true);
+        if (itemAttemptEvent.Cancelled)
+        {
+            reason = attemptEvent.Reason ?? reason;
+            return false;
+        }
+
+        return true;
+    }
+
     public bool TryGetSlotEntity(EntityUid uid, string slot, [NotNullWhen(true)] out EntityUid? entityUid, InventoryComponent? inventoryComponent = null, ContainerManagerComponent? containerManagerComponent = null)
     {
         entityUid = null;

@@ -19,16 +19,25 @@
   id: AtmosphericTechnicianBackpack
   equipment:
     back: ClothingBackpackAtmospherics
+  effects:
+  - !type:GroupLoadoutEffect
+    proto: EffectSpeciesNonSnail
 
 - type: loadout
   id: AtmosphericTechnicianSatchel
   equipment:
     back: ClothingBackpackSatchelAtmospherics
+  effects:
+  - !type:GroupLoadoutEffect
+    proto: EffectSpeciesNonSnail
 
 - type: loadout
   id: AtmosphericTechnicianDuffel
   equipment:
     back: ClothingBackpackDuffelAtmospherics
+  effects:
+  - !type:GroupLoadoutEffect
+    proto: EffectSpeciesNonSnail
 
 # OuterClothing
 - type: loadout
@@ -41,3 +50,6 @@
   id: WhiteShoes
   equipment:
     shoes: ClothingShoesColorWhite
+  effects:
+  - !type:GroupLoadoutEffect
+    proto: EffectSpeciesNonSnail

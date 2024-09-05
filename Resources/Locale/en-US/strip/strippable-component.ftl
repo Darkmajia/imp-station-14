@@ -7,6 +7,7 @@ strippable-component-item-slot-free-message = {$owner} has nothing there!
 strippable-component-cannot-unequip-message = {$owner} cannot unequip that!
 strippable-component-cannot-drop-message = {$owner} cannot drop that!
 strippable-component-alert-owner = {$user} is removing your {$item}!
+strippable-component-alert-owner-peek = {$user} is peeking in your {$item}!
 strippable-component-alert-owner-hidden = You feel someone fumbling in your {$slot}!
 strippable-component-alert-owner-insert = {$user} is putting {$item} on you!
 strippable-component-alert-owner-insert-hand = {$user} is putting {$item} in your hand!

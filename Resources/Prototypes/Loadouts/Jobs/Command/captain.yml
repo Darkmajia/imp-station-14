@@ -69,16 +69,25 @@
   id: CaptainBackpack
   equipment:
     back: ClothingBackpackCaptain
+  effects:
+  - !type:GroupLoadoutEffect
+    proto: EffectSpeciesNonSnail
 
 - type: loadout
   id: CaptainSatchel
   equipment:
     back: ClothingBackpackSatchelCaptain
+  effects:
+  - !type:GroupLoadoutEffect
+    proto: EffectSpeciesNonSnail
 
 - type: loadout
   id: CaptainDuffel
   equipment:
     back: ClothingBackpackDuffelCaptain
+  effects:
+  - !type:GroupLoadoutEffect
+    proto: EffectSpeciesNonSnail
 
 # Outer clothing
 - type: loadout

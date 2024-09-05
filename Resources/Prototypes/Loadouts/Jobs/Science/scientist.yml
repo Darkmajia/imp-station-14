@@ -80,16 +80,25 @@
   id: ScientistBackpack
   equipment:
     back: ClothingBackpackScience
+  effects:
+  - !type:GroupLoadoutEffect
+    proto: EffectSpeciesNonSnail
 
 - type: loadout
   id: ScientistSatchel
   equipment:
     back: ClothingBackpackSatchelScience
+  effects:
+  - !type:GroupLoadoutEffect
+    proto: EffectSpeciesNonSnail
 
 - type: loadout
   id: ScientistDuffel
   equipment:
     back: ClothingBackpackDuffelScience
+  effects:
+  - !type:GroupLoadoutEffect
+    proto: EffectSpeciesNonSnail
 
 # OuterClothing
 - type: loadout
@@ -141,6 +150,9 @@
   id: ScienceWinterBoots
   equipment:
     shoes: ClothingShoesBootsWinterSci
+  effects:
+  - !type:GroupLoadoutEffect
+    proto: EffectSpeciesNonSnail
 
 # ID
 - type: loadout

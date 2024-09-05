@@ -46,16 +46,25 @@
   id: MimeBackpack
   equipment:
     back: ClothingBackpackMime
+  effects:
+  - !type:GroupLoadoutEffect
+    proto: EffectSpeciesNonSnail
 
 - type: loadout
   id: MimeSatchel
   equipment:
     back: ClothingBackpackSatchelMime
+  effects:
+  - !type:GroupLoadoutEffect
+    proto: EffectSpeciesNonSnail
 
 - type: loadout
   id: MimeDuffel
   equipment:
     back: ClothingBackpackDuffelMime
+  effects:
+  - !type:GroupLoadoutEffect
+    proto: EffectSpeciesNonSnail
 
 # Outerclothing
 - type: loadout

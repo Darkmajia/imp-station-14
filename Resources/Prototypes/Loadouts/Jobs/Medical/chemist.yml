@@ -14,16 +14,25 @@
   id: ChemistBackpack
   equipment:
     back: ClothingBackpackChemistry
+  effects:
+  - !type:GroupLoadoutEffect
+    proto: EffectSpeciesNonSnail
 
 - type: loadout
   id: ChemistSatchel
   equipment:
     back: ClothingBackpackSatchelChemistry
+  effects:
+  - !type:GroupLoadoutEffect
+    proto: EffectSpeciesNonSnail
 
 - type: loadout
   id: ChemistDuffel
   equipment:
     back: ClothingBackpackDuffelChemistry
+  effects:
+  - !type:GroupLoadoutEffect
+    proto: EffectSpeciesNonSnail
 
 # Outer clothing
 - type: loadout

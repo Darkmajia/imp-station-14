@@ -2,6 +2,7 @@
 - type: roleLoadout
   id: JobCaptain
   groups:
+  - GroupGastropoidShell
   - CaptainHead
   - CaptainNeck
   - CaptainJumpsuit
@@ -15,6 +16,7 @@
   id: JobHeadOfPersonnel
   groups:
   - GroupTankHarness
+  - GroupGastropoidShell
   - HoPHead
   - HoPNeck
   - HoPJumpsuit
@@ -35,6 +37,7 @@
   id: JobPassenger
   groups:
   - GroupTankHarness
+  - GroupGastropoidShell
   - PassengerJumpsuit
   - CommonBackpack
   - PassengerNeck
@@ -51,6 +54,7 @@
   id: JobBartender
   groups:
   - GroupTankHarness
+  - GroupGastropoidShell
   - BartenderHead
   - BartenderJumpsuit
   - CommonBackpack
@@ -65,6 +69,7 @@
   id: JobServiceWorker
   groups:
   - GroupTankHarness
+  - GroupGastropoidShell
   - BartenderJumpsuit
   - CommonBackpack
   - Glasses
@@ -76,6 +81,7 @@
   id: JobChef
   groups:
   - GroupTankHarness
+  - GroupGastropoidShell
   - ChefHead
   - ChefMask
   - ChefJumpsuit
@@ -90,6 +96,7 @@
   id: JobLibrarian
   groups:
   - GroupTankHarness
+  - GroupGastropoidShell
   - LibrarianJumpsuit
   - CommonBackpack
   - Glasses
@@ -101,6 +108,7 @@
   id: JobLawyer
   groups:
   - GroupTankHarness
+  - GroupGastropoidShell
   - LawyerNeck
   - LawyerJumpsuit
   - CommonBackpack
@@ -113,6 +121,7 @@
   id: JobChaplain
   groups:
   - GroupTankHarness
+  - GroupGastropoidShell
   - ChaplainHead
   - ChaplainMask
   - ChaplainNeck
@@ -128,6 +137,7 @@
   id: JobJanitor
   groups:
   - GroupTankHarness
+  - GroupGastropoidShell
   - JanitorHead
   - JanitorJumpsuit
   - JanitorGloves
@@ -143,6 +153,7 @@
   id: JobBotanist
   groups:
   - GroupTankHarness
+  - GroupGastropoidShell
   - BotanistHead
   - BotanistJumpsuit
   - BotanistBackpack
@@ -156,6 +167,7 @@
   id: JobClown
   groups:
   - GroupTankHarness
+  - GroupGastropoidShell
   - ClownHead
   - ClownJumpsuit
   - ClownBackpack
@@ -169,6 +181,7 @@
   id: JobMime
   groups:
   - GroupTankHarness
+  - GroupGastropoidShell
   - MimeHead
   - MimeMask
   - MimeJumpsuit
@@ -183,6 +196,7 @@
   id: JobMusician
   groups:
   - GroupTankHarness
+  - GroupGastropoidShell
   - MusicianJumpsuit
   - CommonBackpack
   - MusicianOuterClothing
@@ -197,6 +211,7 @@
   id: JobQuartermaster
   groups:
   - GroupTankHarness
+  - GroupGastropoidShell
   - QuartermasterHead
   - QuartermasterNeck
   - QuartermasterJumpsuit
@@ -212,6 +227,7 @@
   id: JobCargoTechnician
   groups:
   - GroupTankHarness
+  - GroupGastropoidShell
   - CargoTechnicianHead
   - CargoTechnicianJumpsuit
   - CargoTechnicianBackpack
@@ -227,6 +243,7 @@
   id: JobSalvageSpecialist
   groups:
   - GroupTankHarness
+  - GroupGastropoidShell
   - SalvageSpecialistBackpack
   - SalvageSpecialistOuterClothing
   - SalvageSpecialistShoes
@@ -241,6 +258,7 @@
   id: JobChiefEngineer
   groups:
   - GroupTankHarness
+  - GroupGastropoidShell
   - ChiefEngineerHead
   - ChiefEngineerJumpsuit
   - StationEngineerBackpack
@@ -255,6 +273,7 @@
   id: JobTechnicalAssistant
   groups:
   - GroupTankHarness
+  - GroupGastropoidShell
   - TechnicalAssistantJumpsuit
   - StationEngineerBackpack
   - SurvivalExtended
@@ -265,6 +284,7 @@
   id: JobStationEngineer
   groups:
   - GroupTankHarness
+  - GroupGastropoidShell
   - StationEngineerHead
   - StationEngineerJumpsuit
   - StationEngineerBackpack
@@ -279,6 +299,7 @@
   id: JobAtmosphericTechnician
   groups:
   - GroupTankHarness
+  - GroupGastropoidShell
   - AtmosphericTechnicianJumpsuit
   - AtmosphericTechnicianBackpack
   - AtmosphericTechnicianOuterClothing
@@ -292,6 +313,7 @@
   id: JobResearchDirector
   groups:
   - GroupTankHarness
+  - GroupGastropoidShell
   - ResearchDirectorHead
   - ResearchDirectorNeck
   - ResearchDirectorJumpsuit
@@ -308,6 +330,7 @@
   id: JobScientist
   groups:
   - GroupTankHarness
+  - GroupGastropoidShell
   - ScientistHead
   - ScientistNeck
   - ScientistJumpsuit
@@ -325,6 +348,7 @@
   id: JobResearchAssistant
   groups:
   - GroupTankHarness
+  - GroupGastropoidShell
   - ResearchAssistantJumpsuit
   - ScientistBackpack
   - Glasses
@@ -336,6 +360,7 @@
 - type: roleLoadout
   id: JobHeadOfSecurity
   groups:
+  - GroupGastropoidShell
   - HeadofSecurityHead
   - HeadofSecurityNeck
   - HeadofSecurityJumpsuit
@@ -351,6 +376,7 @@
 - type: roleLoadout
   id: JobWarden
   groups:
+  - GroupGastropoidShell
   - WardenHead
   - WardenJumpsuit
   - SecurityBackpack
@@ -365,6 +391,7 @@
 - type: roleLoadout
   id: JobSecurityOfficer
   groups:
+  - GroupGastropoidShell
   - SecurityHead
   - SecurityJumpsuit
   - SecurityBackpack
@@ -381,6 +408,7 @@
   id: JobDetective
   groups:
   - GroupTankHarness
+  - GroupGastropoidShell
   - DetectiveHead
   - DetectiveNeck
   - DetectiveJumpsuit
@@ -395,6 +423,7 @@
 - type: roleLoadout
   id: JobSecurityCadet
   groups:
+  - GroupGastropoidShell
   - SecurityCadetJumpsuit
   - SecurityBackpack
   - SurvivalSecurity
@@ -406,6 +435,7 @@
   id: JobChiefMedicalOfficer
   groups:
   - GroupTankHarness
+  - GroupGastropoidShell
   - ChiefMedicalOfficerHead
   - MedicalMask
   - ChiefMedicalOfficerJumpsuit
@@ -423,6 +453,7 @@
   id: JobMedicalDoctor
   groups:
   - GroupTankHarness
+  - GroupGastropoidShell
   - MedicalDoctorHead
   - MedicalMask
   - MedicalDoctorJumpsuit
@@ -440,6 +471,7 @@
   id: JobMedicalIntern
   groups:
   - GroupTankHarness
+  - GroupGastropoidShell
   - MedicalInternJumpsuit
   - MedicalBackpack
   - Glasses
@@ -451,6 +483,7 @@
   id: JobChemist
   groups:
   - GroupTankHarness
+  - GroupGastropoidShell
   - MedicalMask
   - ChemistJumpsuit
   - MedicalGloves
@@ -465,6 +498,7 @@
   id: JobParamedic
   groups:
   - GroupTankHarness
+  - GroupGastropoidShell
   - ParamedicHead
   - MedicalMask
   - ParamedicJumpsuit
@@ -482,6 +516,7 @@
   id: JobZookeeper
   groups:
   - GroupTankHarness
+  - GroupGastropoidShell
   - CommonBackpack
   - Glasses
   - Survival
@@ -492,6 +527,7 @@
   id: JobReporter
   groups:
   - GroupTankHarness
+  - GroupGastropoidShell
   - ReporterJumpsuit
   - CommonBackpack
   - Glasses
@@ -503,6 +539,7 @@
   id: JobPsychologist
   groups:
   - GroupTankHarness
+  - GroupGastropoidShell
   - PsychologistJumpsuit
   - MedicalBackpack
   - Glasses
@@ -514,6 +551,7 @@
   id: JobBoxer
   groups:
   - GroupTankHarness
+  - GroupGastropoidShell
   - BoxerJumpsuit
   - BoxerGloves
   - CommonBackpack
@@ -531,12 +569,14 @@
   - Survival
   - GroupSpeciesBreathTool
   - GroupTankHarness
+  - GroupGastropoidShell
 
 - type: roleLoadout
   id: RoleSurvivalClown
   groups:
   - SurvivalClown
   - GroupTankHarness
+  - GroupGastropoidShell
 
 - type: roleLoadout
   id: RoleSurvivalExtended
@@ -544,6 +584,7 @@
   - SurvivalExtended
   - GroupSpeciesBreathTool
   - GroupTankHarness
+  - GroupGastropoidShell
 
 - type: roleLoadout
   id: RoleSurvivalMedical
@@ -551,6 +592,7 @@
   - SurvivalMedical
   - GroupSpeciesBreathToolMedical
   - GroupTankHarness
+  - GroupGastropoidShell
 
 - type: roleLoadout
   id: RoleSurvivalSecurity
@@ -558,6 +600,7 @@
   - SurvivalSecurity
   - GroupSpeciesBreathToolSecurity
   - GroupTankHarness
+  - GroupGastropoidShell
 
 - type: roleLoadout
   id: RoleSurvivalSyndicate
@@ -565,9 +608,11 @@
   - SurvivalSyndicate
   - GroupSpeciesBreathTool
   - GroupTankHarness
+  - GroupGastropoidShell
 
 - type: roleLoadout
   id: RoleSurvivalEVA
   groups:
   - GroupEVATank
   - SurvivalExtended
+  - GroupGastropoidShell

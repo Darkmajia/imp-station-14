@@ -81,16 +81,25 @@
   id: SecurityBackpack
   equipment:
     back: ClothingBackpackSecurity
+  effects:
+  - !type:GroupLoadoutEffect
+    proto: EffectSpeciesNonSnail
 
 - type: loadout
   id: SecuritySatchel
   equipment:
     back: ClothingBackpackSatchelSecurity
+  effects:
+  - !type:GroupLoadoutEffect
+    proto: EffectSpeciesNonSnail
 
 - type: loadout
   id: SecurityDuffel
   equipment:
     back: ClothingBackpackDuffelSecurity
+  effects:
+  - !type:GroupLoadoutEffect
+    proto: EffectSpeciesNonSnail
 
 # Belt
 - type: loadout
@@ -124,16 +133,25 @@
   id: CombatBoots
   equipment:
     shoes: ClothingShoesBootsCombatFilled
+  effects:
+  - !type:GroupLoadoutEffect
+    proto: EffectSpeciesNonSnail
 
 - type: loadout
   id: JackBoots
   equipment:
     shoes: ClothingShoesBootsJackFilled
+  effects:
+  - !type:GroupLoadoutEffect
+    proto: EffectSpeciesNonSnail
 
 - type: loadout
   id: SecurityWinterBoots
   equipment:
     shoes: ClothingShoesBootsWinterSecFilled
+  effects:
+  - !type:GroupLoadoutEffect
+    proto: EffectSpeciesNonSnail
 
 # PDA
 - type: loadout

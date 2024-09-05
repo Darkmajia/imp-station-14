@@ -35,27 +35,42 @@
   id: ClownBackpack
   equipment:
     back: ClothingBackpackClown
+  effects:
+  - !type:GroupLoadoutEffect
+    proto: EffectSpeciesNonSnail
 
 - type: loadout
   id: ClownSatchel
   equipment:
     back: ClothingBackpackSatchelClown
+  effects:
+  - !type:GroupLoadoutEffect
+    proto: EffectSpeciesNonSnail
 
 - type: loadout
   id: ClownDuffel
   equipment:
     back: ClothingBackpackDuffelClown
+  effects:
+  - !type:GroupLoadoutEffect
+    proto: EffectSpeciesNonSnail
 
 # Shoes
 - type: loadout
   id: ClownShoes
   equipment:
     shoes: ClothingShoesClown
+  effects:
+  - !type:GroupLoadoutEffect
+    proto: EffectSpeciesNonSnail
 
 - type: loadout
   id: JesterShoes
   equipment:
     shoes: ClothingShoesJester
+  effects:
+  - !type:GroupLoadoutEffect
+    proto: EffectSpeciesNonSnail
 
 # Outer clothing
 - type: loadout

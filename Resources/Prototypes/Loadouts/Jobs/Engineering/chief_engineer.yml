@@ -69,3 +69,6 @@
   id: BrownShoes
   equipment:
     shoes: ClothingShoesColorBrown
+  effects:
+  - !type:GroupLoadoutEffect
+    proto: EffectSpeciesNonSnail

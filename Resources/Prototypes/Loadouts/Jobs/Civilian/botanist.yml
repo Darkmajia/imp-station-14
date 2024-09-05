@@ -30,16 +30,25 @@
   id: BotanistBackpack
   equipment:
     back: ClothingBackpackHydroponics
+  effects:
+  - !type:GroupLoadoutEffect
+    proto: EffectSpeciesNonSnail
 
 - type: loadout
   id: BotanistSatchel
   equipment:
     back: ClothingBackpackSatchelHydroponics
+  effects:
+  - !type:GroupLoadoutEffect
+    proto: EffectSpeciesNonSnail
 
 - type: loadout
   id: BotanistDuffel
   equipment:
     back: ClothingBackpackDuffelHydroponics
+  effects:
+  - !type:GroupLoadoutEffect
+    proto: EffectSpeciesNonSnail
 
 # Outer clothing
 - type: loadout

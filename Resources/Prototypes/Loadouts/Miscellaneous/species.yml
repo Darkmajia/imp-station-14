@@ -1,0 +1,23 @@
+- type: loadoutEffectGroup
+  id: EffectSpeciesSnail
+  effects:
+  - !type:SpeciesLoadoutEffect
+    species:
+    - Snail
+
+- type: loadoutEffectGroup
+  id: EffectSpeciesNonSnail
+  effects:
+  - !type:SpeciesLoadoutEffect
+    species:
+    - Snail
+    invert: true
+
+# Gastropoid Shell
+- type: loadout
+  id: LoadoutGastropoidShell
+  effects:
+  - !type:GroupLoadoutEffect
+    proto: EffectSpeciesSnail
+  equipment:
+    back: ClothingBackpackGastropoidShell

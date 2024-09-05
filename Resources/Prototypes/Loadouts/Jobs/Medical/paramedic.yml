@@ -31,4 +31,7 @@
   id: BlueShoes
   equipment:
     shoes: ClothingShoesColorBlue
+  effects:
+  - !type:GroupLoadoutEffect
+    proto: EffectSpeciesNonSnail
 

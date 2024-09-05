@@ -1345,3 +1345,12 @@
   hidden: true
   loadouts:
   - LoadoutSpeciesBreathToolSecurity
+
+- type: loadoutGroup
+  id: GroupGastropoidShell
+  name: loadout-group-gastropoid-shell
+  minLimit: 1
+  maxLimit: 1
+  hidden: true
+  loadouts:
+  - LoadoutGastropoidShell

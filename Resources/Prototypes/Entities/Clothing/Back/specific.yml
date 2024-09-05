@@ -61,3 +61,24 @@
     solution: tank
   - type: ExaminableSolution
     solution: tank
+
+- type: entity
+  parent: ClothingBackpack
+  id: ClothingBackpackGastropoidShell
+  name: gastropoid shell
+  description: A humble home and superb storage for gastropoids.
+  components:
+  - type: Sprite
+    sprite: Objects/Fun/Instruments/otherinstruments.rsi
+    state: seashell
+  - type: Item
+    size: Ginormous
+  - type: Clothing
+    slots: back
+  - type: Storage
+    grid:
+    - 0,0,7,7
+    maxItemSize: Huge
+  - type: ExplosionResistance
+    damageCoefficient: 0
+  - type: PeekOnly
