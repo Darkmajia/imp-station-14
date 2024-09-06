@@ -58,19 +58,3 @@ public sealed class IsUnequippingAttemptEvent : UnequipAttemptEventBase
     {
     }
 }
-
-public sealed class BeingPeekedAttemptEvent : UnequipAttemptEventBase
-{
-    public BeingPeekedAttemptEvent(EntityUid peekee, EntityUid peekTarget, EntityUid equipment,
-        SlotDefinition slotDefinition) : base(peekee, peekTarget, equipment, slotDefinition)
-    {
-    }
-}
-
-public sealed class IsPeekingAttemptEvent : UnequipAttemptEventBase
-{
-    public IsPeekingAttemptEvent(EntityUid peekee, EntityUid peekTarget, EntityUid equipment,
-        SlotDefinition slotDefinition) : base(peekee, peekTarget, equipment, slotDefinition)
-    {
-    }
-}

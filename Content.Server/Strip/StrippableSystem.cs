@@ -112,10 +112,7 @@ namespace Content.Server.Strip
                 StartStripInsertInventory((user, userHands), strippable.Owner, userHands.ActiveHandEntity.Value, args.Slot);
             else if (userHands.ActiveHandEntity == null && hasEnt)
             {
-                if (HasComp<PeekOnlyComponent>(held))
-                    StartStripPeekInventory(user, strippable.Owner, held!.Value, args.Slot);
-                else
-                    StartStripRemoveInventory(user, strippable.Owner, held!.Value, args.Slot);
+                StartStripRemoveInventory(user, strippable.Owner, held!.Value, args.Slot);
             }
         }
 
@@ -576,8 +573,7 @@ namespace Content.Server.Strip
             if (ev.Event.InventoryOrHand)
             {
                 if ( ev.Event.InsertOrRemove && !CanStripInsertInventory((entity.Owner, entity.Comp), args.Target.Value, args.Used.Value, ev.Event.SlotOrHandName) ||
-                    !ev.Event.InsertOrRemove && !CanStripRemoveInventory(entity.Owner, args.Target.Value, args.Used.Value, ev.Event.SlotOrHandName) && !HasComp<PeekOnlyComponent>(args.Used.Value) ||
-                    !ev.Event.InsertOrRemove && !CanStripPeekInventory(entity.Owner, args.Target.Value, args.Used.Value, ev.Event.SlotOrHandName) && HasComp<PeekOnlyComponent>(args.Used.Value))
+                    !ev.Event.InsertOrRemove && !CanStripRemoveInventory(entity.Owner, args.Target.Value, args.Used.Value, ev.Event.SlotOrHandName))
                         ev.Cancel();
             }
             else
@@ -601,11 +597,8 @@ namespace Content.Server.Strip
             if (ev.InventoryOrHand)
             {
                 if (ev.InsertOrRemove)
-                    StripInsertInventory((entity.Owner, entity.Comp), ev.Target.Value, ev.Used.Value, ev.SlotOrHandName);
-                else if (HasComp<PeekOnlyComponent>(ev.Used.Value))
-                    StripPeekInventory(entity.Owner, ev.Target.Value, ev.Used.Value, ev.SlotOrHandName, ev.Args.Hidden);
-                else
-                    StripRemoveInventory(entity.Owner, ev.Target.Value, ev.Used.Value, ev.SlotOrHandName, ev.Args.Hidden);
+                        StripInsertInventory((entity.Owner, entity.Comp), ev.Target.Value, ev.Used.Value, ev.SlotOrHandName);
+                else    StripRemoveInventory(entity.Owner, ev.Target.Value, ev.Used.Value, ev.SlotOrHandName, ev.Args.Hidden);
             }
             else
             {
@@ -614,97 +607,3 @@ namespace Content.Server.Strip
                 else    StripRemoveHand((entity.Owner, entity.Comp), ev.Target.Value, ev.Used.Value, ev.SlotOrHandName, ev.Args.Hidden);
             }
         }
-
-        /// <summary>
-        ///     Checks whether the item can be peeked from inside the target's inventory.
-        /// </summary>
-        private bool CanStripPeekInventory(
-            EntityUid user,
-            EntityUid target,
-            EntityUid item,
-            string slot)
-        {
-            if (!_inventorySystem.TryGetSlotEntity(target, slot, out var slotItem))
-            {
-                _popupSystem.PopupCursor(Loc.GetString("strippable-component-item-slot-free-message", ("owner", target)), user);
-                return false;
-            }
-
-            if (slotItem != item)
-                return false;
-
-            if (!_inventorySystem.CanPeek(user, target, slot, out var reason))
-            {
-                _popupSystem.PopupCursor(Loc.GetString(reason), user);
-                return false;
-            }
-
-            return true;
-        }
-
-        /// <summary>
-        ///     Begins a DoAfter to peek at the item from the target's inventory.
-        /// </summary>
-        private void StartStripPeekInventory(
-            EntityUid user,
-            EntityUid target,
-            EntityUid item,
-            string slot)
-        {
-            if (!CanStripPeekInventory(user, target, item, slot))
-                return;
-
-            if (!_inventorySystem.TryGetSlot(target, slot, out var slotDef))
-            {
-                Log.Error($"{ToPrettyString(user)} attempted to peek at an item from a non-existent inventory slot ({slot}) on {ToPrettyString(target)}");
-                return;
-            }
-
-            var (time, stealth) = GetStripTimeModifiers(user, target, item, slotDef.StripTime);
-
-            if (!stealth)
-            {
-                if (slotDef.StripHidden)
-                    _popupSystem.PopupEntity(Loc.GetString("strippable-component-alert-owner-hidden", ("slot", slot)), target, target, PopupType.Large);
-                else
-                    _popupSystem.PopupEntity(Loc.GetString("strippable-component-alert-owner-peek", ("user", Identity.Entity(user, EntityManager)), ("item", item)), target, target, PopupType.Large);
-            }
-
-            var prefix = stealth ? "stealthily " : "";
-            _adminLogger.Add(LogType.Stripping, LogImpact.Low, $"{ToPrettyString(user):actor} is trying to {prefix}peek in the item {ToPrettyString(item):item} from {ToPrettyString(target):target}'s {slot} slot");
-
-            var doAfterArgs = new DoAfterArgs(EntityManager, user, time, new StrippableDoAfterEvent(false, true, slot), user, target, item)
-            {
-                Hidden = stealth,
-                AttemptFrequency = AttemptFrequency.EveryTick,
-                BreakOnDamage = true,
-                BreakOnMove = true,
-                NeedHand = true,
-                BreakOnHandChange = false, // Allow simultaneously removing multiple items.
-                DuplicateCondition = DuplicateConditions.SameTool
-            };
-
-            _doAfterSystem.TryStartDoAfter(doAfterArgs);
-        }
-
-        /// <summary>
-        ///     Peeks at the item from the target's inventory.
-        /// </summary>
-        private void StripPeekInventory(
-            EntityUid user,
-            EntityUid target,
-            EntityUid item,
-            string slot,
-            bool stealth)
-        {
-            if (!CanStripPeekInventory(user, target, item, slot))
-                return;
-
-            if (!_inventorySystem.TryPeek(user, target, slot))
-                return;
-
-            _storageSystem.OpenStorageUI(user, item);
-            _adminLogger.Add(LogType.Stripping, LogImpact.Medium, $"{ToPrettyString(user):actor} has peeked inside the item {ToPrettyString(item):item} from {ToPrettyString(target):target}'s {slot} slot");
-        }
-    }
-}
