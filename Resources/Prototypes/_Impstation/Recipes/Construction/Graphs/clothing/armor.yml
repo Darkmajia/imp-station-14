@@ -1,0 +1,14 @@
+- type: constructionGraph
+  id: HardsuitSalvageGoliath
+  start: start
+  graph:
+  - node: start
+    entity: ClothingOuterHardsuitSalvage
+    edges:
+    - to: icon
+      steps:
+      - material: GoliathHide
+        amount: 3
+        doAfter: 5
+  - node: icon
+    entity: ClothingOuterHardsuitSalvageGoliath

@@ -1,0 +1,30 @@
+- type: entity
+  parent: ClothingOuterHardsuitSalvage
+  id: ClothingOuterHardsuitSalvageGoliath
+  name: goliath-plated mining hardsuit
+  description: A special suit that protects against hazardous, low pressure environments. Reinforced with goliath plating for heightened protection.
+  components:
+  - type: Sprite
+    sprite: Clothing/OuterClothing/Hardsuits/salvage.rsi
+  - type: Clothing
+    sprite: Clothing/OuterClothing/Hardsuits/salvage.rsi
+  - type: PressureProtection
+    highPressureMultiplier: 0.5
+    lowPressureMultiplier: 1000
+  - type: ExplosionResistance
+    damageCoefficient: 0.2
+  - type: Armor
+    modifiers:
+      coefficients:
+        Blunt: 0.6
+        Slash: 0.6
+        Piercing: 0.5
+        Heat: 0.2
+        Radiation: 0.1
+        Caustic: 0.7
+  - type: ClothingSpeedModifier
+    walkModifier: 0.75
+    sprintModifier: 0.75
+  - type: HeldSpeedModifier
+  - type: ToggleableClothing
+    clothingPrototype: ClothingHeadHelmetHardsuitSalvage
