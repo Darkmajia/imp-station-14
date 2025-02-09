@@ -17,7 +17,6 @@ public sealed class SharedMonumentSystem : EntitySystem
     [Dependency] private readonly SharedMapSystem _map = default!;
     [Dependency] private readonly SharedUserInterfaceSystem _uiSystem = default!;
     [Dependency] private readonly IPrototypeManager _prototype = default!;
-    [Dependency] private readonly IRobustRandom _random = default!;
 
     public override void Initialize()
     {
@@ -79,14 +78,21 @@ public sealed class SharedMonumentSystem : EntitySystem
         if (!_prototype.TryIndex(args.GlyphProtoId, out var proto))
             return;
 
-        if (!TryComp<MapGridComponent>(Transform(ent).GridUid, out var grid))
+        var xform = Transform(ent);
+
+        if (!TryComp<MapGridComponent>(xform.GridUid, out var grid))
             return;
 
-        var tile = GetGlyphSpawningPoint(ent, grid);
-        if (tile == null)
-            return;
+        var localTile = _map.GetTileRef(xform.GridUid.Value, grid, xform.Coordinates);
+        var targetIndices = localTile.GridIndices + new Vector2i(0, -1);
 
-        Spawn(proto.Entity, _map.ToCenterCoordinates(tile.Value, grid));
+        // need to move CosmicGlyph to shared so this can be uncommented to prevent glyph stacking
+        /*
+        if (_map.GetAnchoredEntities(xform.GridUid.Value, grid, targetIndices).Any(tileEnt => HasComp<CosmicGlyphComponent>(tileEnt)))
+            return;
+        */
+
+        Spawn(proto.Entity, _map.ToCenterCoordinates(xform.GridUid.Value, targetIndices, grid));
 
         _uiSystem.SetUiState(ent.Owner, MonumentKey.Key, GenerateBuiState(ent.Comp));
     }
@@ -138,57 +144,6 @@ public sealed class SharedMonumentSystem : EntitySystem
         cloneTo.PercentageComplete = cloneFrom.PercentageComplete;
         cloneTo.SelectedGlyph = cloneFrom.SelectedGlyph;
         cloneTo.UnlockedInfluences = cloneFrom.UnlockedInfluences;
-    }
-
-    private TileRef? GetGlyphSpawningPoint(Entity<MonumentComponent> ent, MapGridComponent grid)
-    {
-        var xform = Transform(ent);
-
-        if (xform.GridUid == null)
-            return null;
-
-        var localPosition = xform.LocalPosition;
-        var tileRefs = _map.GetLocalTilesIntersecting(
-                xform.GridUid.Value,
-                grid,
-                new Box2(localPosition + new Vector2(-1, -1), localPosition + new Vector2(1, -1)))
-            .ToList();
-
-        if (tileRefs.Count == 0)
-            return null;
-
-        // need to move CosmicGlyph to shared so we don't end up stacking glyphs
-        TileRef? result = null;
-        while (result == null)
-        {
-            if (tileRefs.Count == 0)
-                break;
-
-            var tileRef = _random.Pick(tileRefs);
-            var valid = true;
-
-            // need to move CosmicGlyph to shared so this can be uncommented to prevent glyph stacking
-            /*
-            foreach (var tileEnt in _map.GetAnchoredEntities(xform.GridUid.Value, grid, tileRef.GridIndices))
-            {
-                if (!HasComp<CosmicGlyphComponent>(tileEnt))
-                    continue;
-
-                valid = false;
-                break;
-            }
-            */
-
-            if (!valid)
-            {
-                tileRefs.Remove(tileRef);
-                continue;
-            }
-
-            result = tileRef;
-        }
-
-        return result;
     }
     #endregion
 }
