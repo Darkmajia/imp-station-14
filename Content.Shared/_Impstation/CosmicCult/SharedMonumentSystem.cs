@@ -50,9 +50,12 @@ public sealed class SharedMonumentSystem : EntitySystem
     #region UI listeners
     private void OnUpgradeButton(Entity<MonumentComponent> ent, ref UpgradeButtonPressedMessage args)
     {
-        // TODO: add check for CrewToConvertNextStage
         if (ent.Comp.AvailableEntropy < ent.Comp.EntropyUntilNextStage ||
             ent.Comp.NextMonument == null)
+            return;
+
+        var cultists = EntityQuery<CosmicCultComponent>(); // this should probably be CosmicCultRoleComponent, but that means moving it from server
+        if (ent.Comp.CrewToConvertNextStage < cultists.Count())
             return;
 
         ent.Comp.AvailableEntropy -= ent.Comp.EntropyUntilNextStage;
@@ -71,7 +74,7 @@ public sealed class SharedMonumentSystem : EntitySystem
     {
         // TODO: this needs checks for tier, or mote cost, or whatever you want to do here
 
-        ent.Comp.SelectedGlyph = args.GlyphProtoId; // not sure if this is needed?
+        ent.Comp.SelectedGlyph = args.GlyphProtoId; // not sure SelectedGlyph is needed for anything? keeping it here in case
 
         if (!_prototype.TryIndex(args.GlyphProtoId, out var proto))
             return;
@@ -155,7 +158,6 @@ public sealed class SharedMonumentSystem : EntitySystem
             return null;
 
         // need to move CosmicGlyph to shared so we don't end up stacking glyphs
-        // var glyphQuery = GetEntityQuery<CosmicGlyphComponent>();
         TileRef? result = null;
         while (result == null)
         {
