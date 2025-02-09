@@ -79,8 +79,9 @@ public enum MaterialStorageVisuals : byte
 /// event raised on the materialStorage when a material entity is inserted into it.
 /// </summary>
 [ByRefEvent]
-public readonly record struct MaterialEntityInsertedEvent(MaterialComponent MaterialComp)
+public readonly record struct MaterialEntityInsertedEvent(EntityUid Material, MaterialComponent MaterialComp)
 {
+    public readonly EntityUid Material = Material; // imp edit
     public readonly MaterialComponent MaterialComp = MaterialComp;
 }
 

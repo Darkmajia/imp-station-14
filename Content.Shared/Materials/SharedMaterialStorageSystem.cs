@@ -286,7 +286,7 @@ public abstract class SharedMaterialStorageSystem : EntitySystem
         _appearance.SetData(receiver, MaterialStorageVisuals.Inserting, true);
         Dirty(receiver, insertingComp);
 
-        var ev = new MaterialEntityInsertedEvent(material);
+        var ev = new MaterialEntityInsertedEvent(toInsert, material); // imp edit
         RaiseLocalEvent(receiver, ref ev);
         return true;
     }

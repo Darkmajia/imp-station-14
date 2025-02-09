@@ -8,6 +8,7 @@
   icon:
     sprite: _Impstation/CosmicCult/Icons/cosmiccult_abilities.rsi
     state: siphon
+  action: ActionCosmicLapse
 
 - type: influence
   id: influenceAberrantLapse1
@@ -18,6 +19,7 @@
   icon:
     sprite: _Impstation/CosmicCult/Icons/cosmiccult_abilities.rsi
     state: blank
+  action: ActionCosmicLapse
 
 - type: influence
   id: influenceAberrantLapse2
@@ -28,3 +30,4 @@
   icon:
     sprite: _Impstation/CosmicCult/Icons/cosmiccult_abilities.rsi
     state: lapse
+  action: ActionCosmicLapse

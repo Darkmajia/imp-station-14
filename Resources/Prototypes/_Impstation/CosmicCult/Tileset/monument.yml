@@ -177,6 +177,8 @@
         map: ["enum.MaterialStorageVisualLayers.Inserting"]
   - type: MaterialStorage
     insertionTime: 1.44
+  - type: Monument
+    nextMonument: MonumentCosmicCult2
 
  ########### STAGE 2 #############
 
@@ -195,6 +197,8 @@
         visible: false
         shader: unshaded
         map: ["enum.MaterialStorageVisualLayers.Inserting"]
+  - type: Monument
+    nextMonument: MonumentCosmicCult3
 
  ########### STAGE 3 #############
 
@@ -211,6 +215,8 @@
         visible: false
         shader: unshaded
         map: ["enum.MaterialStorageVisualLayers.Inserting"]
+  - type: Monument
+    nextMonument: MonumentCosmicCult3+
 
  ########### STAGE 4 #############
 

@@ -22,6 +22,8 @@ public sealed partial class MonumentComponent : Component
     [DataField] public int CrewToConvertNextStage;
 
     [DataField] public float PercentageComplete;
+
+    [DataField] public EntProtoId? NextMonument;
 }
 
 [Serializable, NetSerializable]
