@@ -1,3 +1,8 @@
+- files: ["admin.ogg"]
+  license: "Custom"
+  copyright: "wayneradiotv I'll get the admin and ban you forever! origin"
+  source: "https://www.youtube.com/watch?v=A4b-wNTkpII"
+
 - files: ["bangindonk.ogg", "newroundsexy.ogg"]
   license: "CC-BY-SA-3.0"
   copyright: "Taken from tgstation"
@@ -13,20 +18,35 @@
   copyright: "Sonic AdventureQuest DX SUBATHON - Day 4 [SA2 End, CONCERT, SHADOW THE HEDGEHOG] (WAYNERADIOTV)"
   source: "https://www.youtube.com/watch?v=eihA21zOHdM"
 
+- files: ["danish.ogg"]
+  license: "Custom"
+  copyright: "JAILBREAK ZOO [JIRXIN Reupload]"
+  source: "https://www.youtube.com/watch?v=ow2Vpf-hrcw"
+
 - files: ["dead.ogg"]
   license: "Custom"
   copyright: "Sonic Heroes - Tails voice clips (William Corkery)"
   source: "https://www.youtube.com/watch?v=xtPLstoHiwo"
 
-- files: ["egg.ogg"]
+- files: ["getoffme.ogg"]
   license: "Custom"
-  copyright: "chat is full of fake fruit stans - Bits and Banter [03/12/2024]"
-  source: "https://www.youtube.com/watch?v=DHRUbA6lfHk"
+  copyright: "Get off me"
+  source: "https://www.youtube.com/watch?v=vEeuErCKojk"
+
+- files: ["leatherbelt.ogg"]
+  license: "Custom"
+  copyright: "Ventrilo Harassment - World Of Warcraft Nerd"
+  source: "https://www.youtube.com/watch?v=bIVTT4fgPQI"
 
 - files: ["slog.ogg", "slog2.ogg"]
   license: "Custom"
   copyright: "TIER TIME *2*: RTVS Community Curated Tier Lists (WAYNERADIOTV)"
   source: "https://www.youtube.com/watch?v=vphU1U1WqtE"
+
+- files: ["weed.ogg"]
+  license: "Custom"
+  copyright: "[ATPLore] Weed is Trash and Dumb to Smoke"
+  source: "https://www.youtube.com/watch?v=soIjL88SKRQ"
 
 - files: ["wuhey.ogg"]
   license: "Custom"
