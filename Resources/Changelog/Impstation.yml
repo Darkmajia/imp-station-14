@@ -1,11 +1,4 @@
 ﻿Entries:
-- author: Widgetbeck, Airfryerbuyonegetonefree
-  changes:
-  - message: Added a *shocking* new event.
-    type: Add
-  id: 2429
-  time: '2025-11-15T00:12:05.0000000+00:00'
-  url: https://github.com/impstation/imp-station-14/pull/3561
 - author: eviltori
   changes:
   - message: random character appearances have gotten less zany.
@@ -4075,3 +4068,10 @@
   id: 2928
   time: '2026-09-03T21:43:49.0000000+00:00'
   url: https://github.com/impstation/imp-station-14/pull/4566
+- author: msTheowo
+  changes:
+  - message: Janitors have Perfect Disposals Aim.
+    type: Add
+  id: 2929
+  time: '2026-09-07T19:52:40.0000000+00:00'
+  url: https://github.com/impstation/imp-station-14/pull/4500
