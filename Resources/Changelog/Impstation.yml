@@ -1,11 +1,4 @@
 ﻿Entries:
-- author: Kandiyaki
-  changes:
-  - message: heretics will ACTUALLY roll in lowpop now. oops.
-    type: Fix
-  id: 2439
-  time: '2025-11-20T10:21:44.0000000+00:00'
-  url: https://github.com/impstation/imp-station-14/pull/3733
 - author: mousesweater
   changes:
   - message: cerberus no longer has stunning abilities
@@ -4070,3 +4063,11 @@
   id: 2938
   time: '2026-09-07T21:43:45.0000000+00:00'
   url: https://github.com/impstation/imp-station-14/pull/4600
+- author: coyragon96
+  changes:
+  - message: Drains now have less capacity. Remember to call your local plumber for
+      any drain related issues!
+    type: Tweak
+  id: 2939
+  time: '2026-09-07T21:55:19.0000000+00:00'
+  url: https://github.com/impstation/imp-station-14/pull/4607
