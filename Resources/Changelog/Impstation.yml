@@ -1,13 +1,4 @@
 ﻿Entries:
-- author: TuttlePants
-  changes:
-  - message: Tourists now take longer to line up their perfect shot
-    type: Tweak
-  - message: Tourist cameras are now made using plastic instead of cotton
-    type: Fix
-  id: 2433
-  time: '2025-11-17T11:22:59.0000000+00:00'
-  url: https://github.com/impstation/imp-station-14/pull/3729
 - author: DVDPlayerOfDiscordFame
   changes:
   - message: Some icon sprites are now corrected to use our sprites instead of the
@@ -4074,3 +4065,10 @@
   id: 2932
   time: '2026-09-07T20:15:30.0000000+00:00'
   url: https://github.com/impstation/imp-station-14/pull/4586
+- author: DVD Player
+  changes:
+  - message: The Astro Ace now doesn't say you can't shoot it when you always could
+    type: Fix
+  id: 2933
+  time: '2026-09-07T20:16:58.0000000+00:00'
+  url: https://github.com/impstation/imp-station-14/pull/4591
