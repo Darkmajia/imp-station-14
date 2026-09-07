@@ -1,12 +1,4 @@
 ﻿Entries:
-- author: DVDPlayerOfDiscordFame
-  changes:
-  - message: Some icon sprites are now corrected to use our sprites instead of the
-      upstream ones we have replaced.
-    type: Fix
-  id: 2434
-  time: '2025-11-18T20:36:12.0000000+00:00'
-  url: https://github.com/impstation/imp-station-14/pull/3713
 - author: msTheowo
   changes:
   - message: Utility knives are yellow now.
@@ -4072,3 +4064,10 @@
   id: 2933
   time: '2026-09-07T20:16:58.0000000+00:00'
   url: https://github.com/impstation/imp-station-14/pull/4591
+- author: msTheowo
+  changes:
+  - message: Wizard helms now count as magical clothes for spells.
+    type: Tweak
+  id: 2934
+  time: '2026-09-07T20:19:43.0000000+00:00'
+  url: https://github.com/impstation/imp-station-14/pull/4596
