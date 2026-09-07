@@ -1,13 +1,6 @@
 ﻿Entries:
 - author: msTheowo
   changes:
-  - message: Utility knives are yellow now.
-    type: Tweak
-  id: 2435
-  time: '2025-11-18T21:22:46.0000000+00:00'
-  url: https://github.com/impstation/imp-station-14/pull/3734
-- author: msTheowo
-  changes:
   - message: Departmental economy has been put down. The station only has one bank
       account.
     type: Remove
@@ -4071,3 +4064,11 @@
   id: 2934
   time: '2026-09-07T20:19:43.0000000+00:00'
   url: https://github.com/impstation/imp-station-14/pull/4596
+- author: Raccoononi
+  changes:
+  - message: Steak Tartare! A divisive French dish made of raw meat, now approved
+      for many species' crew diet menu on imp NT stations.
+    type: Add
+  id: 2935
+  time: '2026-09-07T20:26:41.0000000+00:00'
+  url: https://github.com/impstation/imp-station-14/pull/4575
