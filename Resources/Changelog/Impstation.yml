@@ -1,11 +1,4 @@
 ﻿Entries:
-- author: starlighthowls
-  changes:
-  - message: TippyTrump rules suck less now.
-    type: Tweak
-  id: 2432
-  time: '2025-11-17T09:12:22.0000000+00:00'
-  url: https://github.com/impstation/imp-station-14/pull/3730
 - author: TuttlePants
   changes:
   - message: Tourists now take longer to line up their perfect shot
@@ -4074,3 +4067,10 @@
   id: 2931
   time: '2026-09-07T20:06:42.0000000+00:00'
   url: https://github.com/impstation/imp-station-14/pull/4559
+- author: DVD Player
+  changes:
+  - message: The Hydra is now the appropriate size
+    type: Fix
+  id: 2932
+  time: '2026-09-07T20:15:30.0000000+00:00'
+  url: https://github.com/impstation/imp-station-14/pull/4586
